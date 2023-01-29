@@ -1,5 +1,181 @@
 *{
     margin: 0;
     padding: 0;
+    --sidecolor: #BFACE2;
+    --rowheight: 2rem;
 }
 
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+    "side-bar header"
+    "side-bar main-content";
+}
+
+.side-bar{
+    background-color: #645CBB;
+    grid-area: side-bar;
+    display: grid;
+    grid-template-rows: 3rem 30rem 9rem ;
+    grid-template-areas: 
+    "logo"
+    "nav"
+    "support";
+    padding: 1rem;
+    gap: 3rem;
+}
+
+.header{
+    background-color: #A084DC;
+    grid-area: header;
+}
+
+.main-content{
+    background-color: #BFACE2;
+    grid-area: main-content;
+}
+
+.logo{
+    grid-area: logo;
+    display: grid;
+    font-size: 2rem;
+    grid-template-columns: 3rem 6rem;
+    grid-template-areas: "image dashboard";
+    gap: .5rem;
+}
+
+.logo img{
+    grid-area: image;
+
+}
+
+.logo p{
+    grid-area: dashboard;
+    align-self: center;
+    color: var(--sidecolor)
+}
+
+.nav{
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 3rem 6rem;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.nav p{
+    color: var(--sidecolor);
+    align-self: center;
+    font-size: 25px;
+}
+
+.support{
+    grid-area: support;
+    display: grid;
+    grid-template-columns: 3rem 6rem;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.support p{
+    color: var(--sidecolor);
+    font-size: 25PX;
+    align-self: center;
+}
+
+.header{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "row1"
+    "row2";
+}
+
+.row1{
+    padding: 1rem 2rem;
+    padding-right: 0;
+    grid-area: row1;
+    display: grid;
+    grid-template-columns: 1fr 10fr 3fr 1fr 1fr 3fr;
+    grid-template-areas: "search input . bell avatar username";
+    align-content: center;
+}
+
+.search{
+    grid-area: search;
+    height: var(--rowheight);
+}
+
+.input{
+    grid-area: input;
+    height: var(--rowheight);
+    border-radius: 1.625rem;
+    border-color: #A084DC;
+    background-color: #BFACE2;
+}
+
+.bell{
+    grid-area: bell;
+    height: var(--rowheight);
+}
+.avatar{
+    grid-area: avatar;
+    height: var(--rowheight);
+    border-radius: 50%;
+}
+
+.username{
+    grid-area: username;
+    height: var(--rowheight);
+    font-size: 22px;
+    font-weight: bolder;
+    align-self: center;
+}
+
+.row2{
+    grid-area: row2;
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 2fr 2fr 2fr;
+    grid-template-areas: "avatar intro . new upload share";
+    padding: 1rem 2rem;
+    padding-right: 3rem;
+    align-content: center;
+    gap: 1rem;
+}
+
+.row2 button{
+    border-radius: 1.625rem;
+    border-color: #A084DC;
+    background-color: #645CBB;
+    color: #BFACE2;
+    font-size: 1rem;
+}
+
+.avatar-big{
+    height: 4rem;
+    border-radius: 50%;
+    grid-area: avatar;
+}
+
+.introduction{
+    grid-area: intro;
+    align-self:center;
+}
+
+.new{
+    grid-area: new;
+}
+
+.upload{
+    grid-area: upload;
+}
+
+.share{
+    grid-area: share;
+}
