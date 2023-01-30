@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    --sidecolor: #BFACE2;
+    --sidecolor: #EBC7E6;
     --rowheight: 2rem;
 }
 
@@ -34,7 +34,7 @@ body{
     grid-area: header;
 }
 
-.main-content{
+.main{
     background-color: #BFACE2;
     grid-area: main-content;
 }
@@ -117,7 +117,7 @@ body{
     height: var(--rowheight);
     border-radius: 1.625rem;
     border-color: #A084DC;
-    background-color: #BFACE2;
+    background-color: #EBC7E6;
 }
 
 .bell{
@@ -155,6 +155,7 @@ body{
     background-color: #645CBB;
     color: #BFACE2;
     font-size: 1rem;
+    height: 3rem;
 }
 
 .avatar-big{
@@ -178,4 +179,96 @@ body{
 
 .share{
     grid-area: share;
+}
+
+
+.main{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "main side";
+}
+
+.main-content{
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    grid-template-areas: 
+    "heading"
+    "content";
+}
+
+.main-content h2{
+    grid-area: heading;
+}
+
+.cards{
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-content: center;
+    justify-content: center;
+}
+
+.card{
+    padding: 1rem;
+    width: 530px;
+    height: 180px;
+    background-color: #EBC7E6;
+    justify-self: start;
+    align-self: center;
+    border-radius: 1rem;
+    display: grid;
+}
+
+.card p{
+    text-align: left;
+}
+
+.card img{
+    height: 1.5rem;
+    text-align: right;
+}
+
+.icons{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.side{
+    grid-area: side;
+}
+
+.announcement-content{
+    background-color: #EBC7E6;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+.announcement-content hr{
+    color: black;
+    background-color: black;
+}
+
+.trending-content{
+    background-color: #EBC7E6;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+    border-radius: 1rem;
+}
+
+.trending-content img{
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.user{
+    align-self: center;
 }
